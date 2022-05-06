@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Dashboard from './components/Dashboard/Dashboard';
 import Preferences from './components/Preferences/Preferences';
 import Login from './components/Login/Login';
@@ -11,39 +11,38 @@ import useToken from "./useToken";
 
 function App() {
 
-  const {token, setToken} = useToken();
+  const { token, setToken } = useToken();
 
-  if(!token) {
+  if (!token) {
 
-    return(
-    <BrowserRouter>
-    <Routes>
+    return (
+      <Router>
+        <Routes>
+          <Route path="/login">
+            <Route
+              index
+              element={<Login setToken={setToken}
+              />}
+            />
+          </Route>
 
-  <Route 
-  path="/login" 
-  element={<Login setToken={setToken}
-  />} />
-
-    
-  </Routes>
-  </BrowserRouter>
-  );
+        </Routes>
+      </Router>
+    );
   }
 
-  
+
   return (
     <div>
-
-    <BrowserRouter>
-      <Routes>
-        <Route path="/dashboard" element={<Dashboard />}>
-        </Route>
-        <Route path="/preferences" element={  <Preferences />}>
-        </Route>
-        
-      </Routes>
-    </BrowserRouter>
-  </div>
+      <Router>
+        <Routes>
+          <Route path="/dashboard" element={<Dashboard />}>
+          </Route>
+          <Route path="/preferences" element={<Preferences />}>
+          </Route>
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
