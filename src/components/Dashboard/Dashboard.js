@@ -20,11 +20,11 @@ export default function Dashboard() {
             <p>Finances</p>
           </article>
 
-          <article class="bg-black border-2 rounded-md h-[400px] m-[10px]">
+          <article className="bg-black border-2 rounded-md h-[400px] m-[10px]">
             <p>HR</p>
           </article>
 
-          <article class="bg-black border-2 rounded-md h-[400px] m-[10px]">
+          <article className="bg-black border-2 rounded-md h-[400px] m-[10px]">
             <p>Team</p>
           </article>
 
