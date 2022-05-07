@@ -8,13 +8,13 @@ export default function Dashboard() {
 
   return (
 
-    <div className="">  <NavBar /> 
-    
-    <Calendar />
+    <div className="">  <NavBar />
+
+      <Calendar />
 
 
 
-<h1 className="text-black text-4xl font-extrabold grid place-items-center align-items-center">Overview</h1>
+      <h1 className="text-black text-4xl font-extrabold grid place-items-center align-items-center">Overview</h1>
 
 
 
