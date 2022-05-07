@@ -1,4 +1,5 @@
 module.exports = {
+  mode: "jit",
   content:  [],
   purge:{
     content: ["./src/**/*.{html,js}"],
@@ -10,6 +11,7 @@ module.exports = {
   darkMode: 'media', // or 'class'
   theme: {
     screens: {
+      xs: '540px',
       sm: '640px',
       md: '768px',
       lg: '1024px',

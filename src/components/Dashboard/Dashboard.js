@@ -1,32 +1,43 @@
 
 import React from 'react';
 import NavBar from "../NavBar/NavBar";
+import Calendar from './Calendar';
 
 
 export default function Dashboard() {
 
   return (
 
-    <div>  <NavBar />
-      <div className="grid grid-flow-col grid-cols-4 gap-4 ">
+    <div className="">  <NavBar /> 
+    
+    <Calendar />
 
-        <section className="text-white hover:bg-blue-100">
 
-          <article className="bg-black  border-2 rounded-md h-[400px] m-[10px]">
-            <p>Projects</p>
-          </article>
 
-          <article className="bg-black border-2 rounded-md h-[400px] m-[10px]">
-            <p>Finances</p>
-          </article>
+<h1 className="text-black text-4xl font-extrabold grid place-items-center align-items-center">Overview</h1>
 
-          <article className="bg-black border-2 rounded-md h-[400px] m-[10px]">
-            <p>HR</p>
-          </article>
 
-          <article className="bg-black border-2 rounded-md h-[400px] m-[10px]">
-            <p>Team</p>
-          </article>
+
+      <div className="p-4 max-w-5xl grid place-items-center  md:gap-4 md:grid-cols-2  text-white ">
+
+
+        <section >
+
+          <div class="bg-black rounded-md h-[300px] border-2 md:sqaure w-60  hover:bg-gray-700 hover:shadow-lg shadow-indigo-500/40">
+            <p>Projects 0verview</p>
+          </div>
+
+          <div class="bg-black rounded-md h-[300px] border-2 md:sqaure hover:bg-gray-700 ">
+            <p>Finances Overview</p>
+          </div>
+
+          <div class="bg-black rounded-md h-[300px] border-2 md:sqaure hover:bg-gray-700 ">
+            <p>HR overview</p>
+          </div>
+
+          <div class="bg-black rounded-md h-[300px] border-2 xs:sqaure hover:bg-gray-700 ">
+            <p>Team overview</p>
+          </div>
 
         </section>
       </div>
