@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { AiOutlineMenu, AiOutlineCloseSquare } from 'react-icons/ai';
 import useToken from '../../useToken'
-
+import { useNavigate } from 'react-router-dom'
 const NavBar = () => {
     const [nav, setNav] = useState(false);
     const handleNav = () => {
         setNav(!nav)
 
     }
+    const navigate = useNavigate()
 
-    const { setToken } = useToken()
+    const { clearToken } = useToken()
 
     return (
 
@@ -24,7 +25,12 @@ const NavBar = () => {
                         <li >HR</li>
                         <li >Team</li>
                         <li >settings</li>
-                        <button className="ml-4" onClick={() => setToken(null)}>
+                        <button className="ml-4" onClick={() => {
+                            clearToken()
+                            navigate('/login')
+
+                        }
+                        }>
                             Log Out
                         </button>
 
