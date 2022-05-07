@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom'
 
 async function loginUser(credentials) {
 
@@ -16,7 +17,7 @@ async function loginUser(credentials) {
 export default function Login({ setToken }) {
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
-
+  const navigate = useNavigate();
   const handleSubmit = async e => {
     e.preventDefault();
     const token = await loginUser({
@@ -24,6 +25,7 @@ export default function Login({ setToken }) {
       password
     });
     setToken(token);
+    navigate('/dashboard')
   }
 
   return (
@@ -40,7 +42,7 @@ export default function Login({ setToken }) {
           <input type="password" onChange={e => setPassword(e.target.value)} />
         </label>
         <div>
-          <button type="submit" onCli>Submit</button>
+          <button type="submit" onClick={handleSubmit}>Submit</button>
         </div>
       </form>
     </div>
