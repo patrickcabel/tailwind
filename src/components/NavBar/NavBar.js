@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlineMenu, AiOutlineCloseSquare } from 'react-icons/ai';
-
+import useToken from '../../useToken'
 
 const NavBar = () => {
     const [nav, setNav] = useState(false);
@@ -8,6 +8,8 @@ const NavBar = () => {
         setNav(!nav)
 
     }
+
+    const { setToken } = useToken()
 
     return (
 
@@ -22,7 +24,10 @@ const NavBar = () => {
                         <li >HR</li>
                         <li >Team</li>
                         <li >settings</li>
-                        <li >Log Out</li>
+                        <button className="ml-4" onClick={() => setToken(null)}>
+                            Log Out
+                        </button>
+
                         <button className="ml-4">Contact</button>
                     </ul>
                 </div>
@@ -44,6 +49,7 @@ const NavBar = () => {
                         <li className="text-2xl">Settings</li>
                         <li className="text-2xl">Finances</li>
                         <li className="text-2xl">Log Out</li>
+
 
                         <button className="m-8">Contact</button>
                     </ul>
