@@ -1,34 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "../NavBar/NavBar";
 import Calendar from "./Calendar";
+import ProjectOverview from "./ProjectsOverview";
+import FinancesOverview from "./FinancesOverview";
+import HROverview from "./HROverview";
+import TeamOverview from "./TeamOverview";
+import Scope from "./Scope";
 
 export default function Dashboard() {
+  const [dash] = useState(false);
+
   return (
-    <div className="">
-      {" "}
-      <NavBar />
-      <Calendar />
-      <h1 className="text-black text-4xl font-extrabold grid place-items-center align-items-center">
-        Overview
-      </h1>
-      <div className="p-4 max-w-5xl grid place-items-center  md:gap-4 md:grid-cols-2  text-white ">
-        <section>
-          <div class="bg-[#6E30E9] rounded-md h-[300px] border-2 md:sqaure w-60  hover:bg-gray-700 hover:shadow-lg shadow-indigo-500/40">
-            <p>Projects 0verview</p>
-          </div>
-
-          <div class="bg-[#6E30E9] rounded-md h-[300px] border-2 md:sqaure hover:bg-gray-700 ">
-            <p>Finances Overview</p>
-          </div>
-
-          <div class="bg-[#6E30E9] rounded-md h-[300px] border-2 md:sqaure hover:bg-gray-700 ">
-            <p>HR overview</p>
-          </div>
-
-          <div class="bg-[#6E30E9] rounded-md h-[300px] border-2 xs:sqaure hover:bg-gray-700 ">
-            <p>Team overview</p>
-          </div>
-        </section>
+    <div>
+      <div>
+        <NavBar />
+      </div>
+      <div className="bg-black">
+        <h1 className="text-[red] text-5xl font-extrabold grid place-items-center align-items-center">
+          Overview
+        </h1>
+        <div className="text-[red]">
+          <Calendar />
+        </div>
+        <div className="">
+          <Scope />
+          <ProjectOverview />
+          <FinancesOverview />
+          <HROverview />
+          <TeamOverview />
+        </div>
       </div>
     </div>
   );
